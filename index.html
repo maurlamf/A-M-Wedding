@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive photo gallery.">
+    <title>Annie Jizmagian and Mauricio Rivera's Wedding &ndash; San Francisco, CA </title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/gallery-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/gallery.css">
+        <!--<![endif]-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Questrial|Roboto+Condensed" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script scr="text/javascript">
+
+(function($) {
+
+////////////////////////////////////////////////////////
+///////////////// SCROLL TO ELEMENT ////////////////////
+////////////////////////////////////////////////////////
+ 
+    var $htmlBody           = $( 'html, body' ),
+        $jsScroll           = $('.js-scroll-to-element'),
+        hash                = window.location.hash,
+        speed               = 600,  // millesconds it takes to reach the item
+        stopHere            = -30,  // pixels from element when it stops
+        target,
+        withHash;
+
+
+    
+    function animateToElement() {
+
+        // scroll to id that matches href and animate
+        $htmlBody.animate({
+            scrollTop: $(withHash).offset().top + stopHere
+        }, speed);
+
+    }
+
+
+    
+    $(window).load(function() {
+
+        // if address bar has hash scroll to element
+        if (hash.length) {
+
+            // update hash
+            withHash = hash;
+
+            // initiate scroll to function
+            animateToElement();
+        }
+
+    });
+
+
+    function scrollToElement(e) {
+        e.preventDefault()
+        // grab href
+        target = $(this).attr('href');
+        
+        // update hash
+        withHash = target;
+
+        // initiate scroll to function
+        animateToElement();
+
+    }
+
+
+    $jsScroll.on('click', scrollToElement);
+
+
+
+
+})(jQuery);
+
+        </script>
+
+</head>
+<body>
+
+
+
+<div>
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">Annie & Mauricio's Wedding</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-selected"><a class="pure-menu-link js-scroll-to-element" href="#details">Home</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Event Details</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Registry</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="https://docs.google.com/uc?id=1cJjYnToYR4dfb5kJxULostZ2NkqywzG5"
+                     alt="bay cruising">
+            <aside class="photo-box-caption">
+                <span>
+                    San Francisco Bay
+                </span>
+            </aside>
+        </div>
+
+        <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+            <div class="l-box">
+                <h1 class="text-box-head">We're getting married!</h1>
+                <p class="text-box-subhead">A San Francisco Wedding</p>
+                <p>
+                    In hexagon anim etsy tofu, sriracha nulla slow-carb. Raw denim irure synth ethical selvage enim church-key laboris. Laborum prism quis health goth, four loko subway tile vaporware literally master cleanse shoreditch tofu sustainable mlkshk pug. Fanny pack kombucha readymade meditation. Thundercats godard normcore 90's mlkshk hell of. Af in qui nisi. PBR&B eu lorem trust fund single-origin coffee, YOLO incididunt sriracha banjo humblebrag.
+                </p>
+            </div>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="https://docs.google.com/uc?id=1Pc6sBGFTLfmkJB3pdRH9SOFc2jrnC5EB"
+                     alt="Meadow">
+
+            <aside class="photo-box-caption">
+                <span>
+                    Tequila, Mexico
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+            <a href="http://www.nilssonlee.se/">
+                <img src="https://docs.google.com/uc?id=1BtFSNspX0YWu2BMh_jl4INjLTE80mbMv"
+                     alt="City">
+            </a>
+
+            <aside class="photo-box-caption">
+                <span>
+                    Las Animas, Mexico  
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="https://docs.google.com/uc?id=1zBLd2BS_EcIt-h1TVVqbpedg7ltv5BkW"
+                     alt="Flowers">
+
+            <aside class="photo-box-caption">
+                <span>
+                    Hong Kong
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="https://docs.google.com/uc?id=1nTKi7d1je_oaavovRb9umLmek5U1GuDb"
+                     alt="Bridge">
+
+            <aside class="photo-box-caption">
+                <span>
+                    Napa, California
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box photo-box-thin pure-u-1 pure-u-lg-2-3">
+                <img src="https://docs.google.com/uc?id=1cBzxtUFWMZXGJi0xhI41MDyseIHsKwPU"
+                     alt="Ojai Wedding">
+            <aside class="photo-box-caption">
+                <span>
+                    Ojai, California
+                </span>
+            </aside>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-3 form-box">
+            <div class="l-box" id="details">
+                <h2>About Us</h2>
+
+                <p>
+                    This page shows how to make a photo gallery using <a href="">Pure Grids</a>. Using Pure, we can create interesting layouts such as this photo gallery. This layout is fully responsive. We've added a bit of custom media queries on top of the responsive grid provided by Pure.
+                </p>
+
+                <p>
+                    We've also taken advantage of <a href="">Pure Forms</a> and <a href="">Pure Menus</a>. This example uses a form with the <code>pure-form</code> class name to create an inline form. We use <a href="">Pure Buttons</a> for the button styling.
+                </p>
+            </div>
+        </div>
+
+        <div class="pure-u-1-3 form-box">
+            <div class="l-box">
+                <h2>Event Details</h2>
+
+                <p>
+                    We're getting married at the historic <a href="https://www.ferrybuildingmarketplace.com/">Ferry Building</a> in San Francisco on Saturday, September 18th! The Ferry Building opened in 1898 and survived both the 1906 and 1989 earthquakes with very little damage.
+                </p>
+
+                <p>
+                    We have booked a room block at the <a href="https://www.jdvhotels.com/hotels/california/san-francisco/hotel-vitale/">Hotel Vitale, </a> located at 8 Mission Street, across the street from the Ferry Building.
+                </p>
+                <a type="submit" class="pure-button" href="https://www.jdvhotels.com/hotels/california/san-francisco/hotel-vitale">Book Hotel</a>
+            </div>
+        </div>
+       
+        <div class="pure-u-1-3 form-box">
+            <div class="l-box">
+                <h2>Registry</h2>
+
+                <p>
+                    This page shows how to make a photo gallery using <a href="#">Pure Grids</a>. Using Pure, we can create interesting layouts such as this photo gallery. This layout is fully responsive. We've added a bit of custom media queries on top of the responsive grid provided by Pure.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor amet fam everyday carry godard humblebrag truffaut selvage, direct trade XOXO cred fashion axe knausgaard biodiesel. Etsy hammock cliche live-edge. Hot chicken palo santo dreamcatcher air plant irony keytar organic tacos jianbing disrupt. Woke 90's direct trade whatever. Green juice marfa vexillologist truffaut direct trade subway tile.
+                </p>
+
+                <button type="submit" class="pure-button">Go To Registry</button>
+            </div>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1 form-box">
+            <div class="about-box">
+
+            <h2>About Us</h2>
+
+            <p>
+                Whatever hell of hammock banjo gentrify pug marfa. Semiotics locavore pug, vape yuccie dreamcatcher neutra tofu copper mug fingerstache. Chia thundercats copper mug vinyl jean shorts kombucha microdosing pug skateboard man bun. Whatever pour-over cold-pressed vexillologist cliche. Fashion axe four dollar toast enamel pin slow-carb green juice vegan. Shoreditch photo booth biodiesel drinking vinegar, gochujang tacos kale chips neutra pug. Deep v mustache photo booth single-origin coffee readymade thundercats chartreuse pok pok mumblecore messenger bag +1.
+            </p>
+            </div>
+        </div>
+    </div>
+    </div>  
+</div>
+        
+
+<iframe src="https://snazzymaps.com/embed/45619" width="100%" height="400px" style="border:none;"></iframe>
+    <div class="footer">  
+    </div>
+
+</body>
+</html>
